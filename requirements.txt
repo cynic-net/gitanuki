@@ -1,0 +1,4 @@
+#   These are development requirements only.
+#   Runtime requirements are in pyproject.toml.
+mypy
+pytest-pt       # brings in `pytest` as well
