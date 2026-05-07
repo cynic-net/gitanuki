@@ -65,6 +65,11 @@ while [[ $# -gt 0 ]]; do case "$1" in
 esac; done
 
 source "$PROJDIR"/pactivate $(notverbose -q)
+vecho '───── mypy'
 $skip_mypy || mypy "${@:-.}"
-pytest $verbose "$PROJDIR" "$@" || fail
-echo "OK ($(elapsed)s)"
+vecho '───── pytest'
+pytest -q $verbose "$PROJDIR" "$@" || fail
+vecho '───── functional test'
+tanuki --help | grep -q '^usage: tanuki' \
+    || die 1 "tanuki --help: missing or unexpected output"
+echo "───── OK ($(elapsed)s)"
