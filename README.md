@@ -1,20 +1,20 @@
-Tanuki: Collection and Rendering of Git Repositories
-====================================================
+Gitanuki: Collection and Rendering of Git Repositories
+======================================================
 
-_Tanuki_ is a program that, given a list of URLs to Git repositories, will
-fetch those repos to keep local copies of them and render their files to
-HTML files that can be viewed in a web browser. (Typically, these will be
-served by a web server, so this can be considered a static web site
+_Gitanuki_ is a program that, given a list of URLs to Git repositories,
+will fetch those repos to keep local copies of them and render their files
+to HTML files that can be viewed in a web browser. (Typically, these will
+be served by a web server, so this can be considered a static web site
 builder.)
 
-`tanuki` is given one argument, the directory containing configuration
+`gitanuki` is given one argument, the directory containing configuration
 data, the repos, and into which to place the rendered output. Under this
 directory will be:
 
 * `repo.list`: Each line is a path under `repo/` followed by one or more
   space-separated URLs suitable for `git fetch`. (Spaces within paths or
-  URLs may be escaped with `\`.) `tanuki` never updates this file, but it's
-  expected that external programs or humans will do so.
+  URLs may be escaped with `\`.) `gitanuki` never updates this file, but
+  it's expected that external programs or humans will do so.
 
 * `repo/`: Bare Git repositories  in directories named for the paths in
   `repo.list`. (These always end in `.git`; it's added if not supplied to
