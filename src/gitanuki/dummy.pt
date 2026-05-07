@@ -1,0 +1,4 @@
+from    gitanuki.dummy  import dummy
+
+def test_dummy():
+    assert 42 == dummy()

@@ -44,6 +44,7 @@ Usage: Test [OPTS] [-- PYTEST-OPTS]
 Options:
   -c        small clean: whatever can be rebuilt quickly
   -C        big clean: everything, but causes slow builds
+  -T        skip mypy type-checking
   -v        verbose mode (multiple use increases verbosity)
   --    pass all subsequent arguments to pytest
 _____
@@ -51,16 +52,19 @@ _____
 
 export PROJDIR=$(cd "$(dirname "$0")" && pwd -P)
 
+skip_mypy=false
 verbose=''                              #  zero or more '-v's
 while [[ $# -gt 0 ]]; do case "$1" in
     -h|--help)      shift; usage; exit 0;;
     -C)             shift; cleanbig;;
     -c)             shift; cleansmall;;
+    -T)             shift; skip_mypy=true;;
     -v)             shift; verbose="$verbose -v";;      # add another -v
     --)             shift; break;;
     *)              die 2 "Unknown argument '$1'; use -- before pytest arguments";;
 esac; done
 
 source "$PROJDIR"/pactivate $(notverbose -q)
-pytest -p pytest_pt -q $verbose "$PROJDIR" "$@" || fail
+$skip_mypy || mypy "${@:-.}"
+pytest $verbose "$PROJDIR" "$@" || fail
 echo "OK ($(elapsed)s)"
