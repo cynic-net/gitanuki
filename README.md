@@ -42,8 +42,8 @@ Running the `Test` script at the top level will test the system. Give `-h`
 for more help.Use
 
 
-TODO
-----
+To-do
+-----
 
 * This project needs someone interested enough to push it forward.
   [@0cjs] is willing to provide assistance, but not wanting to do it alone.
