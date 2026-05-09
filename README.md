@@ -45,6 +45,8 @@ for more help.Use
 TODO
 ----
 
+* This project needs someone interested enough to push it forward.
+  [@0cjs] is willing to provide assistance, but not wanting to do it alone.
 * For those willing to run a "dynamic" web site, providing an interface to
   e.g. [`git-bug`] which stores issues [directly in the Git
   database][gb-db] would be a convenient feature that could lessen
@@ -53,5 +55,6 @@ TODO
 
 
 <!-------------------------------------------------------------------->
+[@0cjs]: https://github.com/0cjs
 [`git-bug`]: https://github.com/git-bug/git-bug
 [gb-db]: https://github.com/git-bug/git-bug/blob/trunk/doc/design/data-model.md
