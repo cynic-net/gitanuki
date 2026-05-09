@@ -44,3 +44,14 @@ for more help.Use
 
 TODO
 ----
+
+* For those willing to run a "dynamic" web site, providing an interface to
+  e.g. [`git-bug`] which stores issues [directly in the Git
+  database][gb-db] would be a convenient feature that could lessen
+  dependency on GitHub/GitLab/etc. systems that do the same in proprietary
+  databases.
+
+
+<!-------------------------------------------------------------------->
+[`git-bug`]: https://github.com/git-bug/git-bug
+[gb-db]: https://github.com/git-bug/git-bug/blob/trunk/doc/design/data-model.md
