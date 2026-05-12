@@ -35,11 +35,20 @@ directory will be:
   (`HEAD`) commit from (XXX which source?)
 
 
-Testing
--------
+Testing and Development
+-----------------------
 
-Running the `Test` script at the top level will test the system. Give `-h`
-for more help.Use
+Running the `Test` script at the top level will test the system. Use
+`./Test -h` for more help.
+
+This repo uses [pactivate] to set up the Python virtual environment for
+development. Follow that link for full documentation, but some key points
+are:
+- You may create a `.python` symlink at the top level pointing to your
+  preferred Python interpreter if you don't want to use the first one in
+  your path. (Always do a `./Test -c` after changing this.)
+- `requirements.txt` (which passed to `pip -r`) lists the packages to be
+  installed for development (including this package in editable form).
 
 
 To-do
@@ -58,3 +67,4 @@ To-do
 [@0cjs]: https://github.com/0cjs
 [`git-bug`]: https://github.com/git-bug/git-bug
 [gb-db]: https://github.com/git-bug/git-bug/blob/trunk/doc/design/data-model.md
+[pactivate]: https://github.com/cynic-net/pactivate
